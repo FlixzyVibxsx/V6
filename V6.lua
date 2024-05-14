@@ -245,7 +245,7 @@ function UILibrary.Main(PrjName,HideKey)
 			Circle.Name = "Circle"
 			Circle.Parent = Circles
 			Circle.AnchorPoint = Vector2.new(0, 0.5)
-			Circle.BackgroundColor3 = Color3.fromRGB(0,195,95)
+			Circle.BackgroundColor3 = Color3.fromRGB(0,195,195)
 			Circle.BorderSizePixel = 0
 			Circle.Position = UDim2.new(0, (i - 1) * 13, 0.5, 0)
 			Circle.Size = UDim2.new(0, 12, 0, 12)
@@ -414,7 +414,7 @@ function UILibrary.Main(PrjName,HideKey)
 		Elements.CanvasSize = UDim2.new(0,0,0,0)
 		Elements.AutomaticCanvasSize = Enum.AutomaticSize.Y
 		Elements.ScrollBarThickness = 2
-		Elements.ScrollBarImageColor3 = Color3.fromRGB(0,195,95)
+		Elements.ScrollBarImageColor3 = Color3.fromRGB(0,195,195)
 		Elements.ScrollBarImageTransparency = 0.5
 
 		FadeFrame.Name = "FadeFrame"
@@ -436,7 +436,7 @@ function UILibrary.Main(PrjName,HideKey)
 			if page.Name ~= "UIPageLayout" and (page.Name == Frame.Name and index == 2) then
 				IsTabOpened.Value = true
 				TweenService:Create(FadeFrame,TweenInfo.new(1.3),{BackgroundTransparency = 1}):Play()
-				TweenService:Create(TabButton,TweenInfo.new(0.25),{BackgroundTransparency = 0.3,BackgroundColor3 = Color3.fromRGB(0,195,95)}):Play()	
+				TweenService:Create(TabButton,TweenInfo.new(0.25),{BackgroundTransparency = 0.3,BackgroundColor3 = Color3.fromRGB(0,195,195)}):Play()	
 			elseif page.Name ~= "UIPageLayout" and (page.Name == Frame.Name and index ~= 2) then
 				IsTabOpened.Value = false
 			end
@@ -492,7 +492,7 @@ function UILibrary.Main(PrjName,HideKey)
 		TabButton.MouseButton1Click:Connect(function()
 			IsTabOpened.Value = true
 			UIPageLayout:JumpTo(Frame)
-			TweenService:Create(TabButton,TweenInfo.new(0.25),{BackgroundTransparency = 0.3,BackgroundColor3 = Color3.fromRGB(0,195,95)}):Play()
+			TweenService:Create(TabButton,TweenInfo.new(0.25),{BackgroundTransparency = 0.3,BackgroundColor3 = Color3.fromRGB(0,195,195)}):Play()
 			TweenService:Create(FadeFrame,TweenInfo.new(0.5),{BackgroundTransparency = 1}):Play()
 			ReColorOtherBtns()
 		end)
@@ -603,7 +603,7 @@ function UILibrary.Main(PrjName,HideKey)
 				ToggleLabel.Parent = Toggle
 				ToggleLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 				ToggleLabel.BackgroundTransparency = 1.000
-				ToggleLabel.BorderColor3 = Color3.fromRGB(0,195,95)
+				ToggleLabel.BorderColor3 = Color3.fromRGB(0,195,195)
 				ToggleLabel.BorderSizePixel = 0
 				ToggleLabel.Position = UDim2.new(0.0500000007, 0, 0, 0)
 				ToggleLabel.Size = UDim2.new(0.949999988, 0, 1, 0)
@@ -620,7 +620,7 @@ function UILibrary.Main(PrjName,HideKey)
 				Checker.Name = "Checker"
 				Checker.Parent = Toggle
 				Checker.AnchorPoint = Vector2.new(0, 0.5)
-				Checker.BackgroundColor3 = Color3.fromRGB(0,195,95)
+				Checker.BackgroundColor3 = Color3.fromRGB(0,195,195)
 				Checker.BorderSizePixel = 0
 				Checker.Position = UDim2.new(0.935, 0, 0.5, 0)
 				Checker.Size = UDim2.new(0, 22, 0, 22)
@@ -780,7 +780,7 @@ function UILibrary.Main(PrjName,HideKey)
 				SliderLabel.Parent = Slider
 				SliderLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 				SliderLabel.BackgroundTransparency = 1.000
-				SliderLabel.BorderColor3 = Color3.fromRGB(0,195,95)
+				SliderLabel.BorderColor3 = Color3.fromRGB(0,195,195)
 				SliderLabel.BorderSizePixel = 0
 				SliderLabel.Position = UDim2.new(0.0500000007, 0, 0, 0)
 				SliderLabel.Size = UDim2.new(0.949999988, 0, 1, 0)
@@ -808,7 +808,7 @@ function UILibrary.Main(PrjName,HideKey)
 				Circle.Name = "Circle"
 				Circle.Parent = Progress
 				Circle.AnchorPoint = Vector2.new(0, 0.5)
-				Circle.BackgroundColor3 = Color3.fromRGB(0,195,95)
+				Circle.BackgroundColor3 = Color3.fromRGB(0,195,195)
 				Circle.BorderSizePixel = 0
 				Circle.Position = UDim2.new(1, 0, 0.5, 0)
 				Circle.Size = UDim2.new(0, 12, 0, 12)
@@ -851,7 +851,7 @@ function UILibrary.Main(PrjName,HideKey)
 
 				Progress.Name = "Progress"
 				Progress.Parent = Sliding
-				Progress.BackgroundColor3 = Color3.fromRGB(0,195,95)
+				Progress.BackgroundColor3 = Color3.fromRGB(0,195,195)
 				Progress.BorderSizePixel = 0
 				Progress.Size = UDim2.new(0.5, 0, 1, 0)
 
@@ -1162,7 +1162,7 @@ function UILibrary.Main(PrjName,HideKey)
 					ChoosedCircle.Name = "ChoosedCircle"
 					ChoosedCircle.Parent = SelectableButton
 					ChoosedCircle.AnchorPoint = Vector2.new(0,0.5)
-					ChoosedCircle.BackgroundColor3 = Color3.fromRGB(0,195,95)
+					ChoosedCircle.BackgroundColor3 = Color3.fromRGB(0,195,195)
 					ChoosedCircle.BackgroundTransparency = 1.000
 					ChoosedCircle.BorderSizePixel = 0
 					ChoosedCircle.Position = UDim2.new(0, 5, 0.5, 0)
@@ -1171,7 +1171,7 @@ function UILibrary.Main(PrjName,HideKey)
 					InnerCircle.Name = "InnerCircle"
 					InnerCircle.Parent = ChoosedCircle
 					InnerCircle.AnchorPoint = Vector2.new(0.5, 0.5)
-					InnerCircle.BackgroundColor3 = Color3.fromRGB(0,195,95)
+					InnerCircle.BackgroundColor3 = Color3.fromRGB(0,195,195)
 					InnerCircle.BackgroundTransparency = 1.000
 					InnerCircle.BorderSizePixel = 0
 					InnerCircle.Position = UDim2.new(0.5, 0, 0.5, 0)

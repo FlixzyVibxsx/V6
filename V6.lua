@@ -171,8 +171,9 @@ function UILibrary.Main(PrjName,HideKey)
     Script5.Name = "Rainbow1"
     Script5.Parent = Library
     table.insert(cors,sandbox(Script5,function()
-        local par = script.Parent.Main
-        local ScrollingFrame = Par:FindFirstChild("ScrollingFrame")
+        local par = script.Parent.Main:FindFirstChild("LeftPart")
+        local ButtonTab = par:FindFirstChild("ButtonsTab")
+        local ScrollingFrame = ButtonTab:FindFirstChild("List")
         if ScrollingFrame then
 	        local function changeButtonColor(button)
 		        button.TextColor3 = Color3.fromHSV(tick()%7/7,1,1)

@@ -176,12 +176,15 @@ function UILibrary.Main(PrjName,HideKey)
         local ScrollingFrame = ButtonTab:FindFirstChild("List")
         if ScrollingFrame then
 	        local function changeButtonColor(button)
+                print "Coloring"
 		        button.TextColor3 = Color3.fromHSV(tick()%7/7,1,1)
 	        end
 
 	        while task.wait() do
 		        for _, child in pairs(ScrollingFrame:GetChildren()) do
+                    print "looking"
 			        if child:IsA("TextButton") then
+                        print "Found"
 				        changeButtonColor(child)
 			        end
 		        end

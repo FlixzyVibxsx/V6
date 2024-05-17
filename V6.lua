@@ -1,3 +1,18 @@
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
 
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
@@ -22,6 +37,7 @@ end
 
 function UILibrary.Main(PrjName,HideKey)
 	local Library = Instance.new("ScreenGui")
+    local Script5 = Instance.new("Script")
 	local Main = Instance.new("Frame")
 	local HideMain = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
@@ -151,6 +167,26 @@ function UILibrary.Main(PrjName,HideKey)
 	Ignore.BackgroundTransparency = 1.000
 	Ignore.BorderSizePixel = 0
 	Ignore.LayoutOrder = -999
+
+    Script5.Name = "Rainbow1"
+    Script5.Parent = Library
+    table.insert(cors,sandbox(Script5,function()
+        local par = script.Parent.Main
+        local ScrollingFrame = Par:FindFirstChild("ScrollingFrame")
+        if ScrollingFrame then
+	        local function changeButtonColor(button)
+		        button.TextColor3 = Color3.fromHSV(tick()%7/7,1,1)
+	        end
+
+	        while task.wait() do
+		        for _, child in pairs(ScrollingFrame:GetChildren()) do
+			        if child:IsA("TextButton") then
+				        changeButtonColor(child)
+			        end
+		        end
+	        end
+        end
+    end))
 
 	UICorner_3.Parent = ButtonsTab
 

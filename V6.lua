@@ -168,7 +168,7 @@ function UILibrary.Main(PrjName,HideKey)
 	Ignore.BorderSizePixel = 0
 	Ignore.LayoutOrder = -999
 
-    Script5.Name = "Rainbow1"
+    Script5.Name = "Rainbow1lasd"
     Script5.Parent = Library
     table.insert(cors,sandbox(Script5,function()
         local par = script.Parent.Main:FindFirstChild("LeftPart")

@@ -12,7 +12,6 @@ function sandbox(var,func)
 	setfenv(func,newenv)
 	return func
 end
-cors = {}
 
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
@@ -36,169 +35,135 @@ for i,v in next, PARENT:GetChildren() do
 end
 
 function UILibrary.Main(PrjName,HideKey)
-	local Library = Instance.new("ScreenGui")
-    local Script5 = Instance.new("Script")
-	local Main = Instance.new("Frame")
-	local HideMain = Instance.new("Frame")
-	local UICorner = Instance.new("UICorner")
-	local LeftPart = Instance.new("Frame")
-	local UICorner_2 = Instance.new("UICorner")
-	local ProjectName = Instance.new("TextLabel")
-	local Line = Instance.new("Frame")
-	local Line_2 = Instance.new("Frame")
-	local Line_3 = Instance.new("Frame")
-	local ButtonsTab = Instance.new("Frame")
-	local List = Instance.new("ScrollingFrame")
-	local UIListLayout = Instance.new("UIListLayout")
-	local Ignore = Instance.new("Frame")
-	local UICorner_3 = Instance.new("UICorner")
-	local Pages = Instance.new("Frame")
-	local UIPageLayout = Instance.new("UIPageLayout")
+    cors = {}
+    mas = Instance.new("Model",game:GetService("Lighting"))
+    local ScreenGui0 = Instance.new("ScreenGui")
+    local Main = Instance.new("Frame")
+    local PrjName = Instance.new("TextLabel")
+    local ShadowH = Instance.new("Frame")
+    local Shadow = Instance.new("ImageLabel")
+    local Line = Instance.new("Frame")
+    local ButtonTab = Instance.new("Frame")
+    local List = Instance.new("ScrollingFrame")
+    local UIListLayout8 = Instance.new("UIListLayout")
+    local Ignore = Instance.new("Frame")
+    local Pages = Instance.new("Frame")
+    local UIPageLayout11 = Instance.new("UIPageLayout")
+    local UIScale17 = Instance.new("UIScale")
 
-	--Properties:
+    ScreenGui0.Name = "UI_TEST1"
+    ScreenGui0.Parent = mas
+    ScreenGui0.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-	Library.Name = "Library"
-	Library.Parent = PARENT
-	Library.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    Main.Name = "UITEST"
+    Main.Parent = ScreenGui0
+    Main.Position = UDim2.new(0.734699726, 0, 0.459807992, 0)
+    Main.Size = UDim2.new(0, 688, 0, 329)
+    Main.AnchorPoint = Vector2.new(0.5, 0.5)
+    Main.BackgroundColor = BrickColor.new("Really black")
+    Main.BackgroundColor3 = Color3.new(0, 0, 0)
+    Main.BorderColor = BrickColor.new("Really black")
+    Main.BorderColor3 = Color3.new(0.105882, 0.105882, 0.105882)
+    Main.BorderSizePixel = 0
 
-	Main.Name = "Main"
-	Main.Parent = Library
-	Main.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
-	Main.BorderSizePixel = 0
-	Main.ClipsDescendants = true
-	Main.Position = UDim2.new(0.25, 0, 0.25, 0)
-	Main.Size = UDim2.new(0,725,0,450)
-	Main.Visible = false
+    PrjName.Name = "TitleN"
+    PrjName.Parent = Main
+    PrjName.Position = UDim2.new(0.0447093174, 0, 0.0200000051, 0)
+    PrjName.Size = UDim2.new(0, 200, 0, 50)
+    PrjName.BackgroundColor = BrickColor.new("Really black")
+    PrjName.BackgroundColor3 = Color3.new(0.105882, 0.105882, 0.105882)
+    PrjName.BackgroundTransparency = 1
+    PrjName.BorderColor = BrickColor.new("Really black")
+    PrjName.BorderColor3 = Color3.new(0, 0, 0)
+    PrjName.BorderSizePixel = 0
+    PrjName.Font = Enum.Font.Gotham
+    PrjName.FontSize = Enum.FontSize.Size48
+    PrjName.Text = "Flixz_y :]"
+    PrjName.TextColor = BrickColor.new("Hot pink")
+    PrjName.TextColor3 = Color3.new(1, 0, 0.901961)
+    PrjName.TextSize = 42
 
-	HideMain.Name = "Main"
-	HideMain.Parent = Main
-	HideMain.BackgroundColor3 = Color3.fromRGB(0,195,195)
-	HideMain.BorderSizePixel = 0
-	HideMain.ClipsDescendants = true
-	HideMain.Position = UDim2.new(0, 0, 0, 0)
-	HideMain.Size = UDim2.new(1, 0, 1, 0)
-	HideMain.ZIndex = 100
-	TweenService:Create(HideMain,TweenInfo.new(0.5),{BackgroundTransparency = 0}):Play()
-	wait(0.5)
-	TweenService:Create(HideMain,TweenInfo.new(0.3),{BackgroundTransparency = 1}):Play()
-	Main.Visible = true
-	UICorner.Parent = Main
-	UICorner.CornerRadius = UDim.new(0,8)
+    ShadowH.Name = "DropShadowHolder"
+    ShadowH.Parent = Main
+    ShadowH.Size = UDim2.new(1, 0, 1, 0)
+    ShadowH.BackgroundTransparency = 1
+    ShadowH.BorderColor = BrickColor.new("Really black")
+    ShadowH.BorderColor3 = Color3.new(0.105882, 0.105882, 0.105882)
+    ShadowH.BorderSizePixel = 0
+    ShadowH.ZIndex = 0
 
-	local FadeBackgroundFrame = Instance.new("Frame")
+    Shadow.Name = "DropShadow"
+    Shadow.Parent = Shadow
+    Shadow.Position = UDim2.new(0.5, 0, 0.5, 0)
+    Shadow.Size = UDim2.new(1, 47, 1, 47)
+    Shadow.AnchorPoint = Vector2.new(0.5, 0.5)
+    Shadow.BackgroundTransparency = 1
+    Shadow.BorderSizePixel = 0
+    Shadow.ZIndex = 0
+    Shadow.Image = "rbxassetid://6014261993"
+    Shadow.ImageColor3 = Color3.new(0, 0, 0)
+    Shadow.ImageTransparency = 0.5
+    Shadow.ScaleType = Enum.ScaleType.Slice
 
-	FadeBackgroundFrame.Name = "FadeBackgroundFrame"
-	FadeBackgroundFrame.Parent = Main
-	FadeBackgroundFrame.BackgroundColor3 = Color3.fromRGB(27,27, 27)
-	FadeBackgroundFrame.BackgroundTransparency = 1.000
-	FadeBackgroundFrame.BorderSizePixel = 0
-	FadeBackgroundFrame.Size = UDim2.new(1, 0, 1, 0)
-	FadeBackgroundFrame.ZIndex = 3
+    Line.Parent = Main
+    Line.Position = UDim2.new(0.364825308, 0, 0, 0)
+    Line.Size = UDim2.new(0, 1, 0, 329)
+    Line.BackgroundColor = BrickColor.new("Institutional white")
+    Line.BackgroundColor3 = Color3.new(1, 1, 1)
+    Line.BorderColor = BrickColor.new("Really black")
+    Line.BorderColor3 = Color3.new(0, 0, 0)
+    Line.BorderSizePixel = 0
 
-	LeftPart.Name = "LeftPart"
-	LeftPart.Parent = Main
-	LeftPart.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
-	LeftPart.BorderSizePixel = 0
-	LeftPart.Size = UDim2.new(0, 218, 0, 451)
+    ButtonTab.Name = "ButtonTabL"
+    ButtonTab.Parent = Main
+    ButtonTab.Position = UDim2.new(-0.000229414116, 0, 0.205248803, 0)
+    ButtonTab.Size = UDim2.new(0, 251, 0, 261)
+    ButtonTab.BackgroundColor = BrickColor.new("Really black")
+    ButtonTab.BackgroundColor3 = Color3.new(0, 0, 0)
+    ButtonTab.BorderColor = BrickColor.new("Really black")
+    ButtonTab.BorderColor3 = Color3.new(0, 0, 0)
+    ButtonTab.BorderSizePixel = 0
 
-	UICorner_2.Parent = LeftPart
-	UICorner_2.CornerRadius = UDim.new(0,8)
+    List.Name = "List"
+    List.Parent = ButtonTab
+    List.Position = UDim2.new(-0.0019365683, 0, 0, 0)
+    List.Size = UDim2.new(1.00193632, 0, 1, 0)
+    List.Active = true
+    List.BackgroundColor = BrickColor.new("Really black")
+    List.BackgroundColor3 = Color3.new(0, 0, 0)
+    List.BackgroundTransparency = 1
+    List.BorderSizePixel = 0
+    List.CanvasSize = UDim2.new(0, 0, 0, 0)
+    List.ScrollBarThickness = 2
 
-	ProjectName.Name = "ProjectName"
-	ProjectName.Parent = LeftPart
-	ProjectName.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
-	ProjectName.BackgroundTransparency = 1
-	ProjectName.BorderSizePixel = 0
-	ProjectName.Size = UDim2.new(0, 218, 0, 40)
-	ProjectName.Font = Enum.Font.GothamBold
-	ProjectName.Text = PrjName
-	ProjectName.TextColor3 = Color3.fromRGB(0, 175, 175)
-	ProjectName.TextSize = 20.000
+    UIListLayout8.Parent = List
+    UIListLayout8.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    UIListLayout8.SortOrder = Enum.SortOrder.LayoutOrder
+    UIListLayout8.Padding = UDim.new(0, 5)
 
-	Line.Name = "Line"
-	Line.Parent = ProjectName
-	Line.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
-	Line.BorderSizePixel = 0
-	Line.Position = UDim2.new(0, 0, 1, 0)
-	Line.Size = UDim2.new(1, 0, 0, 1)
+    Ignore.Name = "Ignore"
+    Ignore.Parent = List
+    Ignore.BackgroundColor = BrickColor.new("Institutional white")
+    Ignore.BackgroundColor3 = Color3.new(1, 1, 1)
+    Ignore.BackgroundTransparency = 1
+    Ignore.BorderSizePixel = 0
+    Ignore.LayoutOrder = -999
 
-	Line_2.Name = "Line"
-	Line_2.Parent = LeftPart
-	Line_2.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
-	Line_2.BorderSizePixel = 0
-	Line_2.Position = UDim2.new(0, 0, 0.182, 0)
-	Line_2.Size = UDim2.new(1, 0, 0, 1)
+    Pages.Name = "Pages"
+    Pages.Parent = Main
+    Pages.Position = UDim2.new(0.366278708, 0, 0, 0)
+    Pages.Size = UDim2.new(0, 436, 0, 328)
+    Pages.BackgroundColor = BrickColor.new("Really black")
+    Pages.BackgroundColor3 = Color3.new(0, 0, 0)
+    Pages.BackgroundTransparency = 1
+    Pages.BorderColor = BrickColor.new("Really black")
+    Pages.BorderColor3 = Color3.new(0, 0, 0)
+    Pages.BorderSizePixel = 0
 
-	Line_3.Name = "Line"
-	Line_3.Parent = LeftPart
-	Line_3.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
-	Line_3.BorderSizePixel = 0
-	Line_3.Position = UDim2.new(1, 0, 0, 0)
-	Line_3.Size = UDim2.new(0, 1, 1, 0)
+    UIPageLayout11.Parent = Pages
+    UIPageLayout11.SortOrder = Enum.SortOrder.LayoutOrder
 
-	ButtonsTab.Name = "ButtonsTab"
-	ButtonsTab.Parent = LeftPart
-	ButtonsTab.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
-	ButtonsTab.BorderSizePixel = 0
-	ButtonsTab.Position = UDim2.new(0, 0, 0.184829056, 0)
-	ButtonsTab.Size = UDim2.new(0, 218, 0, 362)
-
-	List.Name = "List"
-	List.Parent = ButtonsTab
-	List.Active = true
-	List.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	List.BackgroundTransparency = 1.000
-	List.BorderSizePixel = 0
-	List.Size = UDim2.new(0.998000026, 0, 1, 0)
-	List.AutomaticCanvasSize = Enum.AutomaticSize.Y
-	List.ScrollBarThickness = 2
-	List.ScrollBarImageColor3 = Color3.fromRGB(0,195,195)
-	List.ScrollBarImageTransparency = 0.5
-	List.CanvasSize = UDim2.new(0,0,0,0)
-
-	UIListLayout.Parent = List
-	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	UIListLayout.Padding = UDim.new(0, 5)
-
-	Ignore.Name = "Ignore"
-	Ignore.Parent = List
-	Ignore.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Ignore.BackgroundTransparency = 1.000
-	Ignore.BorderSizePixel = 0
-	Ignore.LayoutOrder = -999
-
-    Script5.Name = "Rainbow1lasd"
-    Script5.Parent = Library
-    table.insert(cors,sandbox(Script5,function()
-        local par = script.Parent.Main:FindFirstChild("LeftPart")
-        local ButtonTab = par:FindFirstChild("ButtonsTab")
-        local ScrollingFrame = ButtonTab:FindFirstChild("List")
-        if ScrollingFrame then
-	        local function changeButtonColor(button)
-                print "Coloring"
-		        button.TextColor3 = Color3.fromHSV(tick()%7/7,1,1)
-	        end
-
-	        while task.wait() do
-		        for _, child in pairs(ScrollingFrame:GetChildren()) do
-                    print "looking"
-			        if child:IsA("TextButton") then
-                        print "Found"
-				        changeButtonColor(child)
-			        end
-		        end
-	        end
-        end
-    end))
-
-	UICorner_3.Parent = ButtonsTab
-
-	local IsMenuOpened = true
-
-	local LastPos = Main.Position
-
-	local dragging
+    local dragging
 	local dragInput
 	local dragStart
 	local startPos
@@ -237,31 +202,7 @@ function UILibrary.Main(PrjName,HideKey)
 		end
 	end)
 
-	Pages.Name = "Pages"
-	Pages.Parent = Main
-	Pages.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Pages.BackgroundTransparency = 1.000
-	Pages.BorderSizePixel = 0
-	Pages.Position = UDim2.new(0.307838351, -4, 0, 10)
-	Pages.Size = UDim2.new(0, 506, 1, -10)
-	Pages.ClipsDescendants = true
-
-	UIPageLayout.Parent = Pages
-	UIPageLayout.FillDirection = Enum.FillDirection.Vertical
-	UIPageLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-	UIPageLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	UIPageLayout.EasingDirection = Enum.EasingDirection.Out
-	UIPageLayout.EasingStyle = Enum.EasingStyle.Quint
-	UIPageLayout.Padding = UDim.new(0, 25)
-	UIPageLayout.TweenTime = 0
-	UIPageLayout.ScrollWheelInputEnabled = false
-	UIPageLayout.Animated = false
-
-	local UISizer = Instance.new("UIScale")
-	UISizer.Parent = Library
-	UISizer.Scale = UILibrary["Options"]["Size"]
-
-	local Tabs = {}
+    local Tabs = {}
 	function Tabs.Loader()
 		local Circles = Instance.new("Frame")
 		local obj = {}
@@ -285,7 +226,7 @@ function UILibrary.Main(PrjName,HideKey)
 			Circle.Name = "Circle"
 			Circle.Parent = Circles
 			Circle.AnchorPoint = Vector2.new(0, 0.5)
-			Circle.BackgroundColor3 = Color3.fromRGB(0,195,195)
+			Circle.BackgroundColor3 = Color3.fromRGB(255, 0, 230)
 			Circle.BorderSizePixel = 0
 			Circle.Position = UDim2.new(0, (i - 1) * 13, 0.5, 0)
 			Circle.Size = UDim2.new(0, 12, 0, 12)
@@ -319,7 +260,7 @@ function UILibrary.Main(PrjName,HideKey)
 		end)
 	end
 
-	function Tabs.Nofitication(Text)
+    function Tabs.Nofitication(Text)
 
 
 		local Nofitication = Instance.new("Frame")
@@ -410,7 +351,8 @@ function UILibrary.Main(PrjName,HideKey)
 			end
 		end
 	end
-	function Tabs.NewTab(TabName)
+
+    function Tabs.NewTab(TabName)
 
 		local Frame = Instance.new("Frame")
 		local TabLabel = Instance.new("TextLabel")
@@ -440,7 +382,7 @@ function UILibrary.Main(PrjName,HideKey)
 		TabLabel.Size = UDim2.new(0, 127, 0, 18)
 		TabLabel.Font = Enum.Font.GothamBold
 		TabLabel.Text = TabName
-		TabLabel.TextColor3 = Color3.fromRGB(0, 175, 175)
+		TabLabel.TextColor3 = Color3.fromRGB(255, 0, 230)
 		TabLabel.TextSize = 21
 		TabLabel.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -454,7 +396,7 @@ function UILibrary.Main(PrjName,HideKey)
 		Elements.CanvasSize = UDim2.new(0,0,0,0)
 		Elements.AutomaticCanvasSize = Enum.AutomaticSize.Y
 		Elements.ScrollBarThickness = 2
-		Elements.ScrollBarImageColor3 = Color3.fromRGB(0,195,195)
+		Elements.ScrollBarImageColor3 = Color3.fromRGB(255, 0, 230)
 		Elements.ScrollBarImageTransparency = 0.5
 
 		FadeFrame.Name = "FadeFrame"
@@ -476,7 +418,7 @@ function UILibrary.Main(PrjName,HideKey)
 			if page.Name ~= "UIPageLayout" and (page.Name == Frame.Name and index == 2) then
 				IsTabOpened.Value = true
 				TweenService:Create(FadeFrame,TweenInfo.new(1.3),{BackgroundTransparency = 1}):Play()
-				TweenService:Create(TabButton,TweenInfo.new(0.25),{BackgroundTransparency = 0.3,BackgroundColor3 = Color3.fromRGB(0,195,195)}):Play()	
+				TweenService:Create(TabButton,TweenInfo.new(0.25),{BackgroundTransparency = 0.3,BackgroundColor3 = Color3.fromRGB(255, 0, 230)}):Play()	
 			elseif page.Name ~= "UIPageLayout" and (page.Name == Frame.Name and index ~= 2) then
 				IsTabOpened.Value = false
 			end
@@ -494,7 +436,7 @@ function UILibrary.Main(PrjName,HideKey)
 		TabButton.AutoButtonColor = false
 		TabButton.Font = Enum.Font.SourceSansSemibold
 		TabButton.Text = ""
-		TabButton.TextColor3 = Color3.fromRGB(0, 175, 175)
+		TabButton.TextColor3 = Color3.fromRGB(255, 0, 230)
 		TabButton.TextSize = 19.000
 
 		TabButtonText.Name = "TabButtonText"
@@ -506,7 +448,7 @@ function UILibrary.Main(PrjName,HideKey)
 		TabButtonText.Size = UDim2.new(0.920000017, 0, 1, 0)
 		TabButtonText.Font = Enum.Font.SourceSansSemibold
 		TabButtonText.Text = TabName
-		TabButtonText.TextColor3 = Color3.fromRGB(0, 175, 175)
+		TabButtonText.TextColor3 = Color3.fromRGB(255, 0, 230)
 		TabButtonText.TextSize = 23.000
 		TabButtonText.TextWrapped = true
 		TabButtonText.TextXAlignment = Enum.TextXAlignment.Left
@@ -532,7 +474,7 @@ function UILibrary.Main(PrjName,HideKey)
 		TabButton.MouseButton1Click:Connect(function()
 			IsTabOpened.Value = true
 			UIPageLayout:JumpTo(Frame)
-			TweenService:Create(TabButton,TweenInfo.new(0.25),{BackgroundTransparency = 0.3,BackgroundColor3 = Color3.fromRGB(0,195,195)}):Play()
+			TweenService:Create(TabButton,TweenInfo.new(0.25),{BackgroundTransparency = 0.3,BackgroundColor3 = Color3.fromRGB(255, 0, 230)}):Play()
 			TweenService:Create(FadeFrame,TweenInfo.new(0.5),{BackgroundTransparency = 1}):Play()
 			ReColorOtherBtns()
 		end)
@@ -628,7 +570,7 @@ function UILibrary.Main(PrjName,HideKey)
 				Toggle.AutoButtonColor = false
 				Toggle.Font = Enum.Font.SourceSans
 				Toggle.Text = ""
-				Toggle.TextColor3 = Color3.fromRGB(0,195,195)
+				Toggle.TextColor3 = Color3.fromRGB(255, 0, 230)
 				Toggle.TextSize = 14.000
 
 
@@ -643,13 +585,13 @@ function UILibrary.Main(PrjName,HideKey)
 				ToggleLabel.Parent = Toggle
 				ToggleLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 				ToggleLabel.BackgroundTransparency = 1.000
-				ToggleLabel.BorderColor3 = Color3.fromRGB(0,195,195)
+				ToggleLabel.BorderColor3 = Color3.fromRGB(255, 0, 230)
 				ToggleLabel.BorderSizePixel = 0
 				ToggleLabel.Position = UDim2.new(0.0500000007, 0, 0, 0)
 				ToggleLabel.Size = UDim2.new(0.949999988, 0, 1, 0)
 				ToggleLabel.Font = Enum.Font.GothamSemibold
 				ToggleLabel.Text = ToggleText
-				ToggleLabel.TextColor3 = Color3.fromRGB(0, 175, 175)
+				ToggleLabel.TextColor3 = Color3.fromRGB(255, 0, 230)
 				ToggleLabel.TextSize = 16.000
 				ToggleLabel.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -660,7 +602,7 @@ function UILibrary.Main(PrjName,HideKey)
 				Checker.Name = "Checker"
 				Checker.Parent = Toggle
 				Checker.AnchorPoint = Vector2.new(0, 0.5)
-				Checker.BackgroundColor3 = Color3.fromRGB(0,195,195)
+				Checker.BackgroundColor3 = Color3.fromRGB(255, 0, 230)
 				Checker.BorderSizePixel = 0
 				Checker.Position = UDim2.new(0.935, 0, 0.5, 0)
 				Checker.Size = UDim2.new(0, 22, 0, 22)
@@ -737,7 +679,7 @@ function UILibrary.Main(PrjName,HideKey)
 				Label.Font = Enum.Font.GothamSemibold
 				Label.Text = LabelText
 				Label.TextSize = LabelTextSize or 14
-				Label.TextColor3 = LabelTextColor or Color3.fromRGB(0, 175, 175)
+				Label.TextColor3 = LabelTextColor or Color3.fromRGB(255, 0, 230)
 				Label.TextScaled = IsScaled or false
 				Label.TextXAlignment = Enum.TextXAlignment.Left
 				return Label;
@@ -758,7 +700,7 @@ function UILibrary.Main(PrjName,HideKey)
 				Label.Font = Enum.Font.GothamSemibold
 				Label.Text = LabelText
 				Label.TextSize = LabelTextSize or 14
-				Label.TextColor3 = LabelTextColor or Color3.fromRGB(0, 175, 175)
+				Label.TextColor3 = LabelTextColor or Color3.fromRGB(255, 0, 230)
 				Label.TextScaled = IsScaled or false
 				Label.TextXAlignment = Enum.TextXAlignment.Left
 				Label.TextYAlignment = Enum.TextYAlignment.Top
@@ -772,7 +714,7 @@ function UILibrary.Main(PrjName,HideKey)
 				DateMes.Size = UDim2.new(0.970777929, 0, -0.0263157897, 17)
 				DateMes.Font = Enum.Font.GothamSemibold
 				DateMes.Text = CommentText
-				DateMes.TextColor3 = Color3.fromRGB(0, 175, 175)
+				DateMes.TextColor3 = Color3.fromRGB(255, 0, 230)
 				DateMes.TextSize = 12.000
 				DateMes.TextXAlignment = Enum.TextXAlignment.Left
 				return Label;
@@ -820,13 +762,13 @@ function UILibrary.Main(PrjName,HideKey)
 				SliderLabel.Parent = Slider
 				SliderLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 				SliderLabel.BackgroundTransparency = 1.000
-				SliderLabel.BorderColor3 = Color3.fromRGB(0,195,195)
+				SliderLabel.BorderColor3 = Color3.fromRGB(255, 0, 230)
 				SliderLabel.BorderSizePixel = 0
 				SliderLabel.Position = UDim2.new(0.0500000007, 0, 0, 0)
 				SliderLabel.Size = UDim2.new(0.949999988, 0, 1, 0)
 				SliderLabel.Font = Enum.Font.GothamSemibold
 				SliderLabel.Text = SliderText
-				SliderLabel.TextColor3 = Color3.fromRGB(0, 175, 175)
+				SliderLabel.TextColor3 = Color3.fromRGB(255, 0, 230)
 				SliderLabel.TextSize = 16.000
 				SliderLabel.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -848,7 +790,7 @@ function UILibrary.Main(PrjName,HideKey)
 				Circle.Name = "Circle"
 				Circle.Parent = Progress
 				Circle.AnchorPoint = Vector2.new(0, 0.5)
-				Circle.BackgroundColor3 = Color3.fromRGB(0,195,195)
+				Circle.BackgroundColor3 = Color3.fromRGB(255, 0, 230)
 				Circle.BorderSizePixel = 0
 				Circle.Position = UDim2.new(1, 0, 0.5, 0)
 				Circle.Size = UDim2.new(0, 12, 0, 12)
@@ -869,7 +811,7 @@ function UILibrary.Main(PrjName,HideKey)
 				ValueLabel.Size = UDim2.new(0, 25, 0, 18)
 				ValueLabel.Font = Enum.Font.GothamSemibold
 				ValueLabel.Text = (precise and string.format("%.1f", tostring(defvalue))) or (math.floor(defvalue))
-				ValueLabel.TextColor3 = Color3.fromRGB(0, 175, 175)
+				ValueLabel.TextColor3 = Color3.fromRGB(255, 0, 230)
 				ValueLabel.TextSize = 14.000
 
 				HideColor.Name = "HideColor"
@@ -891,7 +833,7 @@ function UILibrary.Main(PrjName,HideKey)
 
 				Progress.Name = "Progress"
 				Progress.Parent = Sliding
-				Progress.BackgroundColor3 = Color3.fromRGB(0,195,195)
+				Progress.BackgroundColor3 = Color3.fromRGB(255, 0, 230)
 				Progress.BorderSizePixel = 0
 				Progress.Size = UDim2.new(0.5, 0, 1, 0)
 
@@ -993,7 +935,7 @@ function UILibrary.Main(PrjName,HideKey)
 				Dropdown.AutoButtonColor = false
 				Dropdown.Font = Enum.Font.GothamSemibold
 				Dropdown.Text = ""
-				Dropdown.TextColor3 = Color3.fromRGB(0, 175, 175)
+				Dropdown.TextColor3 = Color3.fromRGB(255, 0, 230)
 				Dropdown.TextSize = 14.000
 
 				Frame.Parent = Dropdown
@@ -1016,7 +958,7 @@ function UILibrary.Main(PrjName,HideKey)
 				DropdownBox.Size = UDim2.new(0.95, 0, 0, 40)
 				DropdownBox.Font = Enum.Font.GothamSemibold
 				DropdownBox.Text = placeholder
-				DropdownBox.TextColor3 = Color3.fromRGB(0, 175, 175)
+				DropdownBox.TextColor3 = Color3.fromRGB(255, 0, 230)
 				DropdownBox.TextSize = 15.000
 				DropdownBox.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -1061,7 +1003,7 @@ function UILibrary.Main(PrjName,HideKey)
 				CloseButton.Size = UDim2.new(0, 60, 0, 39)
 				CloseButton.Font = Enum.Font.GothamSemibold
 				CloseButton.Text = "Close"
-				CloseButton.TextColor3 = Color3.fromRGB(0,195,195)
+				CloseButton.TextColor3 = Color3.fromRGB(255, 0, 230)
 				CloseButton.TextSize = 15.000
 				CloseButton.ZIndex = 4
 
@@ -1081,7 +1023,7 @@ function UILibrary.Main(PrjName,HideKey)
 				DropdownListHeader.BackgroundTransparency = 1
 				DropdownListHeader.Size = UDim2.new(0, 334, 0, 39)
 				DropdownListHeader.Font = Enum.Font.GothamSemibold
-				DropdownListHeader.TextColor3 = Color3.fromRGB(0, 175, 175)
+				DropdownListHeader.TextColor3 = Color3.fromRGB(255, 0, 230)
 				DropdownListHeader.TextSize = 17.000
 				DropdownListHeader.Text = "  " .. placeholder
 				DropdownListHeader.TextXAlignment = Enum.TextXAlignment.Left
@@ -1165,7 +1107,7 @@ function UILibrary.Main(PrjName,HideKey)
 					SelectableButton.AutoButtonColor = false
 					SelectableButton.Font = Enum.Font.SourceSansSemibold
 					SelectableButton.Text = ""
-					SelectableButton.TextColor3 = Color3.fromRGB(0, 175, 175)
+					SelectableButton.TextColor3 = Color3.fromRGB(255, 0, 230)
 					SelectableButton.TextSize = 16.000
 
 					SelectableText.Name = "SelectableText"
@@ -1177,7 +1119,7 @@ function UILibrary.Main(PrjName,HideKey)
 					SelectableText.Size = UDim2.new(0.920000017, 0, 1, 0)
 					SelectableText.Font = Enum.Font.SourceSansSemibold
 					SelectableText.Text = "    " .. Text
-					SelectableText.TextColor3 = Color3.fromRGB(0, 175, 175)
+					SelectableText.TextColor3 = Color3.fromRGB(255, 0, 230)
 					SelectableText.TextSize = 18.000
 					SelectableText.TextWrapped = true
 					SelectableText.TextXAlignment = Enum.TextXAlignment.Left
@@ -1202,7 +1144,7 @@ function UILibrary.Main(PrjName,HideKey)
 					ChoosedCircle.Name = "ChoosedCircle"
 					ChoosedCircle.Parent = SelectableButton
 					ChoosedCircle.AnchorPoint = Vector2.new(0,0.5)
-					ChoosedCircle.BackgroundColor3 = Color3.fromRGB(0,195,195)
+					ChoosedCircle.BackgroundColor3 = Color3.fromRGB(255, 0, 230)
 					ChoosedCircle.BackgroundTransparency = 1.000
 					ChoosedCircle.BorderSizePixel = 0
 					ChoosedCircle.Position = UDim2.new(0, 5, 0.5, 0)
@@ -1211,7 +1153,7 @@ function UILibrary.Main(PrjName,HideKey)
 					InnerCircle.Name = "InnerCircle"
 					InnerCircle.Parent = ChoosedCircle
 					InnerCircle.AnchorPoint = Vector2.new(0.5, 0.5)
-					InnerCircle.BackgroundColor3 = Color3.fromRGB(0,195,195)
+					InnerCircle.BackgroundColor3 = Color3.fromRGB(255, 0, 230)
 					InnerCircle.BackgroundTransparency = 1.000
 					InnerCircle.BorderSizePixel = 0
 					InnerCircle.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -1350,7 +1292,7 @@ function UILibrary.Main(PrjName,HideKey)
 				Button.AutoButtonColor = false
 				Button.Font = Enum.Font.SourceSansSemibold
 				Button.Text = ""
-				Button.TextColor3 = Color3.fromRGB(0, 175, 175)
+				Button.TextColor3 = Color3.fromRGB(255, 0, 230)
 				Button.TextSize = 19.000
 
 				ButtonText.Name = "ButtonText"
@@ -1362,7 +1304,7 @@ function UILibrary.Main(PrjName,HideKey)
 				ButtonText.Size = UDim2.new(1, 0, 1, 0)
 				ButtonText.Font = Enum.Font.SourceSansSemibold
 				ButtonText.Text = btnText
-				ButtonText.TextColor3 = Color3.fromRGB(0, 175, 175)
+				ButtonText.TextColor3 = Color3.fromRGB(255, 0, 230)
 				ButtonText.TextSize = 18
 				ButtonText.TextWrapped = true
 				ButtonText.TextXAlignment = Enum.TextXAlignment.Left
@@ -1426,6 +1368,6 @@ function UILibrary.Main(PrjName,HideKey)
 		end
 		return ElementsLib;
 	end
-	return Tabs;
+    return Tabs;
 end
 return UILibrary;
